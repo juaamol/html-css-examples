@@ -3,9 +3,7 @@ Collection of examples
 
 ## Index component [EN]
 
-Index with dots
-
-[EN]
+Index with dots.
 
 Basically nested tables where each row between 3 or 4 elements (td).
 Each tr is displayed using flex
@@ -16,7 +14,7 @@ The fourth element, if it exists, must be a table which will be used as a sublev
 
 ## Index component [ES]
 
-Index with dots
+Índice con puntos.
 
 [ES]
 
