@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mutinivel con puntos</title>
+    <style>
+      .index-component {
+        --space-for-page-number: 3rem;
+        --space-for-subsections: 2rem;
+        --space-around-dots: 1rem;
+      }
+      .index-component table {
+        width: 100%;
+      }
+
+      /******* Modify this to add more levels ***********/
+      /** Declare start point for counter **/
+      .index-component .lvl1 {
+        counter-reset: lvl1;
+      }
+
+      .index-component .lvl2 {
+        counter-reset: lvl2;
+      }
+
+      .index-component .lvl3 {
+        counter-reset: lvl3;
+      }
+
+      /** Add the number before titles **/
+
+      .index-component .lvl1 tr td:nth-child(1)::before {
+        counter-increment: lvl1;
+        content: counters(lvl1, '.') '. ';
+      }
+
+      .index-component .lvl2 tr td:nth-child(1)::before {
+        counter-increment: lvl2;
+        content: counters(lvl1, '.') '. ' counters(lvl2, '.') '. ';
+      }
+
+      .index-component .lvl3 tr td:nth-child(1)::before {
+        counter-increment: lvl3;
+        content: counters(lvl1, '.') '. ' counters(lvl2, '.') '. '
+          counters(lvl3, '.') '. ';
+      }
+      /***************************************************/
+
+      .index-component .lvl2 tr {
+        margin-left: var(--space-for-subsections);
+      }
+
+      .index-component tr {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .index-component tr td:nth-child(2) {
+        flex-grow: 1;
+        border-bottom: dotted gray;
+        margin-left: var(--space-around-dots);
+        margin-right: var(--space-around-dots);
+      }
+
+      .index-component tr td:nth-child(3) {
+        width: var(--space-for-page-number);
+      }
+
+      .index-component tr td:nth-child(4) {
+        min-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="index-component">
+      <table class="lvl1">
+        <tr>
+          <td>title</td>
+          <td></td>
+          <td>page</td>
+          <!-- Every four td is a new subsection-->
+          <td>
+            <table class="lvl2">
+              <tr>
+                <td>title</td>
+                <td></td>
+                <td>page</td>
+              </tr>
+              <tr>
+                <td>title</td>
+                <td></td>
+                <td>page</td>
+                <!-- Every four td is a new subsection-->
+                <td>
+                  <table class="lvl2">
+                    <tr>
+                      <td>title</td>
+                      <td></td>
+                      <td>page</td>
+                    </tr>
+                    <tr>
+                      <td>title</td>
+                      <td></td>
+                      <td>page</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>title</td>
+          <td></td>
+          <td>page</td>
+          <!-- Every four td is a new subsection-->
+          <td>
+            <table class="lvl2">
+              <tr>
+                <td>title</td>
+                <td></td>
+                <td>page</td>
+              </tr>
+              <tr>
+                <td>title</td>
+                <td></td>
+                <td>page</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
