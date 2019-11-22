@@ -4,8 +4,8 @@ body {
 
 .container {
   background-color: #041f30;
-  height: 800px;
-  width: 1000px;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,6 +14,7 @@ body {
 .card {
   height: 400px;
   width: 300px;
+  margin: 8px;
   position: relative;
 
   --skew-size: -2px;
@@ -21,6 +22,7 @@ body {
   --bottom-right-color: rgba(239, 244, 46, 0.8);
   --button-space: 12px;
   --card-content-space: 16px;
+  --transition-duration: 2s;
 }
 
 .card:hover .card-content__button {
@@ -57,7 +59,7 @@ body {
   padding: var(--button-space);
   opacity: 0;
   transform: translateY(-50px);
-  transition: opacity 2s, transform 2s;
+  transition: opacity var(--transition-duration), transform var(--transition-duration);
 }
 
 .card-content__number {
@@ -67,7 +69,7 @@ body {
   right: 0;
   font-size: 13rem;
   opacity: 0.2;
-  transition: top 2s;
+  transition: top var(--transition-duration);
 }
 
 .card__skew {
