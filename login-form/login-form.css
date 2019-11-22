@@ -12,20 +12,21 @@ body {
   --bg-color: rgba(51, 51, 51, 0.95);
   --input-color: rgba(51, 51, 51, 0);
   --primary-color: rgb(186, 104, 200);
+  --ball-size: 7rem;
 
   display: flex;
   flex-direction: column;
   width: 300px;
   padding: 4rem 2rem;
-  margin-top: 3.5rem;
+  margin-top: calc(var(--ball-size) / 2);
   color: white;
   background: var(--bg-color);
   position: relative;
 }
 
 .form__ball {
-  height: 7rem;
-  width: 7rem;
+  height: var(--ball-size);
+  width: var(--ball-size);
   position: absolute;
   top: 0;
   right: 50%;
