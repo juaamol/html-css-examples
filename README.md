@@ -52,6 +52,8 @@ Tarjeta con dos colores diferentes. Un botón aparece al poner el puntero sobre 
 
 ## Open Close Card
 
+Own version of this tutorial: https://www.youtube.com/watch?v=EZqhWu8GJ6U&t=43s
+
 ### Open Close card [EN]
 
 ![Card open close](/documentation/images/open-card/open-card.png "Card open close")
