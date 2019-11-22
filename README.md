@@ -1,7 +1,9 @@
 # html-css-examples
 Collection of examples
 
-## Index component [EN]
+## Index component
+
+### Index component [EN]
 
 Index with dots.
 
@@ -16,7 +18,7 @@ The fourth element, if it exists, must be a table which will be used as a sublev
 
 ![Index with dots](/documentation/images/index-component.png "Index component")
 
-## Index component [ES]
+### Index component [ES]
 
 Índice con puntos.
 
@@ -31,3 +33,18 @@ El segundo elemento (td) de una fila está vacio, pero sirve para dibujar los pu
 El cuarto elemento, si existe, debe ser una tabla (table) dentro de un elemento (td). La tabla será un subnivel. 
 
 ![Index with dots](/documentation/images/index-component.png "Index component")
+
+
+## Dual Card  
+
+### Dual Card [EN]
+
+Card with two diferent colors.
+
+![Card two colors](/documentation/images/dual-card/dual-card.png "Card two colors")
+
+### Dual Card [ES]
+
+Tarjeta con dos colores diferentes.
+
+![Tarjeta con dos colores](/documentation/images/dual-card/dual-card.png "Tarjeta con dos colores")
