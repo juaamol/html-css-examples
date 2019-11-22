@@ -23,6 +23,15 @@ body {
   --card-content-space: 16px;
 }
 
+.card:hover .card-content__button {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.card:hover .card-content__number {
+  top: 0;
+}
+
 .card-content {
   box-sizing: border-box;
   height: 100%;
@@ -40,20 +49,25 @@ body {
 }
 
 .card-content__button {
+  position: absolute;
   color: inherit;
   font-size: inherit;
   border: solid 2px gray;
   background: transparent;
   padding: var(--button-space);
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 2s, transform 2s;
 }
 
 .card-content__number {
   position: absolute;
   font-weight: bold;
-  top: 0;
+  top: 40px;
   right: 0;
   font-size: 13rem;
   opacity: 0.2;
+  transition: top 2s;
 }
 
 .card__skew {

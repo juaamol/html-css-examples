@@ -37,14 +37,16 @@ El cuarto elemento, si existe, debe ser una tabla (table) dentro de un elemento 
 
 ## Dual Card  
 
+Own version of this tutorial: https://www.youtube.com/watch?v=-1U62fdmCk4&t=20s
+
 ### Dual Card [EN]
 
-Card with two diferent colors.
+Card with two diferent colors. Button appears on hover
 
 ![Card two colors](/documentation/images/dual-card/dual-card.png "Card two colors")
 
 ### Dual Card [ES]
 
-Tarjeta con dos colores diferentes.
+Tarjeta con dos colores diferentes. Un botón aparece al poner el puntero sobre la tarjeta.
 
 ![Tarjeta con dos colores](/documentation/images/dual-card/dual-card.png "Tarjeta con dos colores")
