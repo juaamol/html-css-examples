@@ -1,0 +1,71 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  background-color: #041f30;
+  height: 800px;
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  height: 400px;
+  width: 300px;
+  position: relative;
+
+  --skew-size: -2px;
+  --top-left-color: rgba(228, 91, 50, 0.8);
+  --bottom-right-color: rgba(239, 244, 46, 0.8);
+  --button-space: 12px;
+  --card-content-space: 16px;
+}
+
+.card-content {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  color: white;
+  background: linear-gradient(-90deg, #041f30 50%, #112a3b 50%);
+  padding: var(--card-content-space);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.card-content__summary {
+  line-height: 1.25rem;
+}
+
+.card-content__button {
+  color: inherit;
+  font-size: inherit;
+  border: solid 2px gray;
+  background: transparent;
+  padding: var(--button-space);
+}
+
+.card-content__number {
+  position: absolute;
+  font-weight: bold;
+  top: 0;
+  right: 0;
+  font-size: 13rem;
+  opacity: 0.2;
+}
+
+.card__skew {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  padding: var(--skew-size);
+  transform: skew(2deg, 3deg);
+  background: rgb(228, 91, 50);
+  background: linear-gradient(
+    145deg,
+    var(--top-left-color) 50%,
+    var(--bottom-right-color) 100%
+  );
+}
