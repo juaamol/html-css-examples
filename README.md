@@ -50,3 +50,14 @@ Card with two diferent colors. Button appears on hover
 Tarjeta con dos colores diferentes. Un botón aparece al poner el puntero sobre la tarjeta.
 
 ![Tarjeta con dos colores](/documentation/images/dual-card/dual-card.png "Tarjeta con dos colores")
+
+
+## Open Close Card
+
+### Open Close card [EN]
+
+![Card open close](/documentation/images/open-card/open-card.png "Card open close")
+
+### Open Close card [ES]
+
+![Tarjeta que se abre y cierra](/documentation/images/open-card/open-card.png "Tarjeta que se abre y cierra")
