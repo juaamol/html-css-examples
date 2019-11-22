@@ -22,8 +22,6 @@ The fourth element, if it exists, must be a table which will be used as a sublev
 
 Índice con puntos.
 
-[ES]
-
 Simplemente tablas anidadas con filas de entre 3 y 4 elementos. 
 
 Cada fila (tr) utiliza display: flex;
