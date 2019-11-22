@@ -1,0 +1,103 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url('./assets/beach-calm.jpg');
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  --bg-color: rgba(51, 51, 51, 0.95);
+  --input-color: rgba(51, 51, 51, 0);
+  --primary-color: rgb(186, 104, 200);
+
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 4rem 2rem;
+  margin-top: 3.5rem;
+  color: white;
+  background: var(--bg-color);
+  position: relative;
+}
+
+.form__ball {
+  height: 7rem;
+  width: 7rem;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__label,
+.form__input {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.form__input {
+  background-color: var(--input-color);
+  color: inherit;
+  border: none;
+  border-bottom: solid 2px white;
+  padding-bottom: 12px;
+}
+
+.form__button {
+  color: inherit;
+  font-size: 1.25rem;
+  padding: 8px;
+  border: none;
+  background-color: var(--primary-color);
+  position: relative;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  height: 3rem;
+}
+
+.form__button::before,
+.form__button::after {
+  content: '';
+  height: inherit;
+  background-color: inherit;
+  display: block;
+  width: 3rem;
+  position: absolute;
+  top: 0;
+}
+
+.form__button::before {
+  left: -3rem;
+  border-radius: 50% 0 0 50%;
+}
+
+.form__button::after {
+  right: -3rem;
+  border-radius: 0 50% 50% 0;
+}
+
+.form__options {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-sm {
+  margin-top: 1.5rem;
+}
+
+.material-icons {
+  font-size: 4rem !important;
+}
