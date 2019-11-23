@@ -1,0 +1,87 @@
+body {
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: #888;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.radial-menu {
+  position: relative;
+  --radius: 200px;
+  --small-radius: 50px;
+  --base-of-triangle: 0px;
+  --logo-size: 4rem;
+  --logo-color: white;
+  --primary-color: #555;
+  --secondary-color: white;
+  --small-logo-size: calc(var(--logo-size) / 2);
+  --small-logo-color: var(--primary-color);
+  --animation-time: 2s;
+}
+
+.triangle {
+  width: 0px;
+  height: 0px;
+  border-top: var(--radius) solid var(--primary-color);
+  border-left: calc(var(--base-of-triangle) / 2) solid transparent;
+  border-right: calc(var(--base-of-triangle) / 2) solid transparent;
+  transform-origin: center bottom;
+  position: absolute;
+  right: calc(50% - (var(--base-of-triangle) / 2));
+  transition: transform var(--animation-time), opacity var(--animation-time);
+  /*box-shadow: 0 0 5px black,  0 0 5px blue , 0 0 5px yellow, 0 0 5px red;*/
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-circle {
+  height: calc(var(--radius) * 2);
+  width: calc(var(--radius) * 2);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.small-circle {
+  height: calc(var(--small-radius) * 2);
+  width: calc(var(--small-radius) * 2);
+  background-color: var(--secondary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.triangle {
+  opacity: 0;
+}
+
+.radial-menu:hover .triangle {
+    opacity: 1;
+}
+
+.small-circle i {
+  font-size: var(--small-logo-size);
+  color: var(--small-logo-color);
+}
+
+.triangle i {
+  position: absolute;
+  --size: var(--logo-size);
+  top: calc(
+    0px - calc(var(--size) / 2) - (var(--radius) + var(--small-radius)) / 2
+  );
+  color: var(--logo-color);
+  z-index: 0;
+  font-size: var(--size);
+}
+
+/*top: calc(0px - (var(--radius) + var(--small-radius)) / 2)*/

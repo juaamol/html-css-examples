@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="./game-radial-menu.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+      rel="stylesheet"
+    />
+    <title>Game radial menu</title>
+  </head>
+  <body>
+    <div class="radial-menu">
+      <div class="big-circle">
+        <div class="triangle"><i class="fas fa-khanda"></i></div>
+        <div class="triangle"><i class="fas fa-snowplow"></i></div>
+        <div class="triangle"><i class="fas fa-medkit"></i></div>
+        <div class="triangle"><i class="fab fa-battle-net"></i></div>
+      </div>
+      <div class="small-circle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <script>
+      const RADIUS = '200';
+      const SMALL_RADIUS = '50';
+      const RADIUS_UNIT = 'px';
+
+      const triangles = document.querySelectorAll('.triangle');
+      const radialMenu = document.querySelector('.radial-menu');
+      const nTriangles = triangles.length;
+      const sideLen = sideLenght(RADIUS, nTriangles);
+      const degreesForEach = 360.0 / nTriangles;
+
+      radialMenu.style.setProperty(
+        '--base-of-triangle',
+        `${sideLen}${RADIUS_UNIT}`,
+      );
+      radialMenu.style.setProperty('--radius', `${RADIUS}${RADIUS_UNIT}`);
+      radialMenu.style.setProperty(
+        '--small-radius',
+        `${SMALL_RADIUS}${RADIUS_UNIT}`,
+      );
+
+      radialMenu.addEventListener('mouseenter', function(event) {
+        triangles.forEach((triangle, index) =>
+          rotate(triangle, degreesForEach * index),
+        );
+      });
+
+      radialMenu.addEventListener('mouseleave', function(event) {
+        triangles.forEach((triangle, index) => unrotate(triangle));
+      });
+
+      function sideLenght(radius, nSides) {
+        return radius * 2.0 * Math.tan(Math.PI / nSides);
+      }
+
+      function rotate(triangle, degrees) {
+        triangle.style.setProperty('transform', `rotate(${degrees}deg)`);
+      }
+
+      function unrotate(triangle) {
+        triangle.style.setProperty('transform', 'none');
+      }
+    </script>
+  </body>
+</html>
