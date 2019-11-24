@@ -3,6 +3,8 @@ Collection of examples
 
 ## Index component
 
+Check it on [Index component](https://juaamol.github.io/html-css-examples/index-component/index-component.html "Index component")
+
 ### Index component [EN]
 
 Index with dots.
@@ -35,47 +37,34 @@ El cuarto elemento, si existe, debe ser una tabla (table) dentro de un elemento 
 
 ## Dual Card  
 
-Own version of this tutorial: https://www.youtube.com/watch?v=-1U62fdmCk4&t=20s
+Check it on [Dual card](https://juaamol.github.io/html-css-examples/dual-card/dual-card.html "Dual card")
 
-### Dual Card [EN]
+Own version of this tutorial: https://www.youtube.com/watch?v=-1U62fdmCk4&t=20s
 
 Card with two diferent colors. Button appears on hover
 
 ![Card two colors](./documentation/images/dual-card/dual-card.png "Card two colors")
 
-### Dual Card [ES]
-
-Tarjeta con dos colores diferentes. Un botón aparece al poner el puntero sobre la tarjeta.
-
-![Tarjeta con dos colores](./documentation/images/dual-card/dual-card.png "Tarjeta con dos colores")
 
 
 ## Open Close Card
 
-Own version of this tutorial: https://www.youtube.com/watch?v=EZqhWu8GJ6U&t=43s
+Check it on [Open Close card](https://juaamol.github.io/html-css-examples/open-card/open-card.html "Open Close card")
 
-### Open Close card [EN]
+Own version of this tutorial: https://www.youtube.com/watch?v=EZqhWu8GJ6U&t=43s
 
 ![Card open close](./documentation/images/open-card/open-card.png "Card open close")
 
-### Open Close card [ES]
-
-![Tarjeta que se abre y cierra](/documentation/images/open-card/open-card.png "Tarjeta que se abre y cierra")
 
 
 ## Login form
 
-Based on: https://www.youtube.com/watch?v=OWNxUVnY3pg
+Check it on [Login form](https://juaamol.github.io/html-css-examples/login-form/login-form.html "Login form")
 
-### Login form [EN]
+Based on: https://www.youtube.com/watch?v=OWNxUVnY3pg
 
 
 ![Login form](/documentation/images/login-form/login-form.png "Login form")
-
-
-### Formulario de autenticación [ES]
-
-![Formulario de autenticación](./documentation/images/login-form/login-form.png "Formulario de autenticación")
 
 
 ## Circle menu
