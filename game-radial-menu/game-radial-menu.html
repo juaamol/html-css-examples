@@ -49,13 +49,13 @@
         triangles.forEach((triangle, index) => {
           triangle.classList.add('no-opacity');
           rotate(triangle, degreesForEach * index);
+        });
+      });
 
-          triangle.addEventListener('mouseleave', function(event) {
-            triangles.forEach((triangle, index) => {
-              unrotate(triangle);
-              triangle.classList.remove('no-opacity');
-            });
-          });
+      radialMenu.addEventListener('mouseleave', function(event) {
+        triangles.forEach((triangle, index) => {
+          triangle.classList.remove('no-opacity');
+          unrotate(triangle);
         });
       });
 
