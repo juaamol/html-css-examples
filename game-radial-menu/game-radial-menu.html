@@ -59,17 +59,15 @@
         });
       });
 
-      /*smallCircle.addEventListener('mouseleave', function(event) {
-        triangles.forEach((triangle, index) => unrotate(triangle));
-      });*/
-
       function sideLenght(radius, nSides) {
         return radius * 2.0 * Math.tan(Math.PI / nSides);
       }
 
       function rotate(triangle, degrees) {
         triangle.style.setProperty('transform', `rotate(${degrees}deg)`);
-        triangle.querySelector('i').style.setProperty('transform', `rotate(${0 - degrees}deg)`);
+        triangle
+          .querySelector('i')
+          .style.setProperty('transform', `rotate(${0 - degrees}deg)`);
       }
 
       function unrotate(triangle) {
