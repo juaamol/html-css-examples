@@ -80,6 +80,6 @@ Based on: https://www.youtube.com/watch?v=OWNxUVnY3pg
 
 ## Circle menu
 
-Check it on https://juaamol.github.io/html-css-examples/game-radial-menu/game-radial-menu.html
+Check it on ![Circle menu](https://juaamol.github.io/html-css-examples/game-radial-menu/game-radial-menu.html "Circle menu")
 
 ![Circle menu](./documentation/images/game-radial-menu/game-radial-menu.png "Circle menu")
