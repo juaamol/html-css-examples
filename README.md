@@ -76,3 +76,8 @@ Based on: https://www.youtube.com/watch?v=OWNxUVnY3pg
 ### Formulario de autenticación [ES]
 
 ![Formulario de autenticación](/documentation/images/login-form/login-form.png "Formulario de autenticación")
+
+
+## Circle menu
+
+![Circle menu](/documentation/images/game-radial-menu/game-radial-menu.png "Circle menu")
