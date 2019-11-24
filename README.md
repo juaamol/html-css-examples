@@ -80,4 +80,6 @@ Based on: https://www.youtube.com/watch?v=OWNxUVnY3pg
 
 ## Circle menu
 
+Check it on ![Circle menu](./game-radial-menu/game-radial-menu.html "Circle menu")
+
 ![Circle menu](./documentation/images/game-radial-menu/game-radial-menu.png "Circle menu")
