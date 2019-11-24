@@ -30,6 +30,7 @@
 
       const triangles = document.querySelectorAll('.triangle');
       const radialMenu = document.querySelector('.radial-menu');
+      const smallCircle = document.querySelector('.small-circle');
       const nTriangles = triangles.length;
       const sideLen = sideLenght(RADIUS, nTriangles);
       const degreesForEach = 360.0 / nTriangles;
@@ -44,15 +45,23 @@
         `${SMALL_RADIUS}${RADIUS_UNIT}`,
       );
 
-      radialMenu.addEventListener('mouseenter', function(event) {
-        triangles.forEach((triangle, index) =>
-          rotate(triangle, degreesForEach * index),
-        );
+      smallCircle.addEventListener('mouseenter', function(event) {
+        triangles.forEach((triangle, index) => {
+          triangle.classList.add('no-opacity');
+          rotate(triangle, degreesForEach * index);
+
+          triangle.addEventListener('mouseleave', function(event) {
+            triangles.forEach((triangle, index) => {
+              unrotate(triangle);
+              triangle.classList.remove('no-opacity');
+            });
+          });
+        });
       });
 
-      radialMenu.addEventListener('mouseleave', function(event) {
+      /*smallCircle.addEventListener('mouseleave', function(event) {
         triangles.forEach((triangle, index) => unrotate(triangle));
-      });
+      });*/
 
       function sideLenght(radius, nSides) {
         return radius * 2.0 * Math.tan(Math.PI / nSides);
@@ -60,10 +69,12 @@
 
       function rotate(triangle, degrees) {
         triangle.style.setProperty('transform', `rotate(${degrees}deg)`);
+        triangle.querySelector('i').style.setProperty('transform', `rotate(${0 - degrees}deg)`);
       }
 
       function unrotate(triangle) {
         triangle.style.setProperty('transform', 'none');
+        triangle.querySelector('i').style.setProperty('transform', 'none');
       }
     </script>
   </body>
