@@ -47,6 +47,7 @@ body {
 }
 
 .card__common {
+  position: relative;
   padding: var(--card-space);
   height: 50%;
   background-color: var(--bg-default);
