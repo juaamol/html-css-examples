@@ -5,6 +5,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .mb-none {
@@ -20,6 +21,8 @@ body {
 .card {
   height: 350px;
   width: 300px;
+  min-width: 255px;
+  margin: 1rem;
 
   --card-space: 2rem;
   --shadow: 45px;
