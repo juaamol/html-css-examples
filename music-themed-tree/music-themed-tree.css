@@ -9,6 +9,7 @@
     --tree-margin: 24px;
     --pentagram-line-width: 2px;
     --pentagram-line-margin: calc(calc(var(--tree-margin) - var(--pentagram-line-width)) / 2);
+    --optional-tree-height: 350px;
 }
 
 .tree-container {
@@ -22,26 +23,31 @@
     border-left: 6px solid var(--henle-blue);
 }
 
+.tree {
+    height: var(--optional-tree-height);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.tree > .tree-list {
+    flex: 1;
+}
+
 .tree-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+
+.tree-list .tree-list {
+    margin-left: var(--tree-margin);
+}
+
 .tree-node {
     position: relative;
     margin: 0;
-}
-
-/* Vertical pentagram line */
-.tree-node::before {
-    content: "";
-    position: absolute;
-    left: 11px;
-    top: 0;
-    bottom: 0;
-    width: var(--pentagram-line-width);
-    background-color: var(--line-color);
 }
 
 .node-row {
@@ -89,14 +95,11 @@
     color: var(--text-dark);
     font-style: italic;
     transition: color 0.2s;
+    background-color:var(--paper);
 }
 
 .node-row:hover .node-text {
     color: var(--henle-blue);
-}
-
-.tree-list .tree-list {
-    margin-left: var(--tree-margin);
 }
 
 .matched {
@@ -117,20 +120,17 @@
 }
 
 .pentagram {
+    position: absolute;
     list-style: none;
     padding-left: 0;
-    margin-left: var(--pentagram-line-margin);
+    left: var(--pentagram-line-margin);
     display: flex;
     margin: 0;
+    height: 100%;
 }
 
 .pentagram > li {
     width: calc(var(--tree-margin) - var(--pentagram-line-width));
-    height: 4px;
-}
-
-.pentagram.big > li {
-    height: 70px;
 }
 
 .pentagram > li:nth-child(odd) {
@@ -138,34 +138,35 @@
     width: var(--pentagram-line-width);
 }
 
-.end-of-piece-container {
-    box-sizing: border-box;
+.double-bar-line {
     margin-left: var(--pentagram-line-margin);
     width: calc(calc(var(--tree-margin) * 4) + var(--pentagram-line-width));
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
-.end-of-piece-prev {
-    width: 100%;
+.double-bar-line > * {
+    background-color: var(--line-color);
+}
+
+.double-bar-line > *:nth-child(1) {
     height: 4px;
-    background-color: var(--line-color);
 }
 
-.end-of-piece-next {
-    width: 100%;
+.double-bar-line > *:nth-child(2) {
     height: 8px;
-    background-color: var(--line-color);
 }
 
 .clef {
     height: calc(var(--tree-margin) * 4 * 18 / 25);
-    color: var(--line-color); 
-    position: relative;
+    margin-left: var(--pentagram-line-margin);
+    width: calc(calc(var(--tree-margin) * 4) + var(--pentagram-line-width));
 }
 
 .clef-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    color: var(--line-color);
 }
