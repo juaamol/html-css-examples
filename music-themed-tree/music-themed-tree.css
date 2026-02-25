@@ -1,0 +1,171 @@
+
+:root {
+    --henle-blue: #5d7a8c;
+    --schirmer-yellow: #f1e4bc;
+    --paper: #fdfcf8;
+    --text-dark: #1a1a1a;
+    --text-gray: #636e72;
+    --line-color: #4d4d4d;
+    --tree-margin: 24px;
+    --pentagram-line-width: 2px;
+    --pentagram-line-margin: calc(calc(var(--tree-margin) - var(--pentagram-line-width)) / 2);
+}
+
+.tree-container {
+    background-color: var(--paper);
+    background-image: url('./assets/natural-paper.png');
+    padding: 30px;
+    max-width: 450px;
+    border-radius: 2px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: "Georgia", serif;
+    border-left: 6px solid var(--henle-blue);
+}
+
+.tree-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tree-node {
+    position: relative;
+    margin: 0;
+}
+
+/* Vertical pentagram line */
+.tree-node::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 0;
+    bottom: 0;
+    width: var(--pentagram-line-width);
+    background-color: var(--line-color);
+}
+
+.node-row {
+    display: flex;
+    align-items: center;
+    padding: 6px 0 6px 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.note-icon {
+    width: 24px;
+    height: 20px;
+    display: flex;
+    color: var(--text-dark);
+    align-items: center;
+    justify-content: center;
+    transform: rotate(90deg);
+    overflow: hidden;
+}
+
+.note-icon > span {
+    font-size: 2.5rem;
+    padding-bottom: 1.4rem;
+}
+
+.note-accent {
+    width: 32px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    color: var(--text-dark);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.note-accent > span {
+    font-size: 2.5rem;
+    padding-top: 1.2rem;
+}
+
+.node-text {
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-style: italic;
+    transition: color 0.2s;
+}
+
+.node-row:hover .node-text {
+    color: var(--henle-blue);
+}
+
+.tree-list .tree-list {
+    margin-left: var(--tree-margin);
+}
+
+.matched {
+    background-color: var(--schirmer-yellow);
+    padding: 2px 4px;
+    border-radius: 1px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.node-meta {
+    font-size: 0.7rem;
+    color: var(--text-gray);
+    margin-left: auto;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pentagram {
+    list-style: none;
+    padding-left: 0;
+    margin-left: var(--pentagram-line-margin);
+    display: flex;
+    margin: 0;
+}
+
+.pentagram > li {
+    width: calc(var(--tree-margin) - var(--pentagram-line-width));
+    height: 4px;
+}
+
+.pentagram.big > li {
+    height: 70px;
+}
+
+.pentagram > li:nth-child(odd) {
+    background: var(--line-color);
+    width: var(--pentagram-line-width);
+}
+
+.end-of-piece-container {
+    box-sizing: border-box;
+    margin-left: var(--pentagram-line-margin);
+    width: calc(calc(var(--tree-margin) * 4) + var(--pentagram-line-width));
+}
+
+.end-of-piece-prev {
+    width: 100%;
+    height: 4px;
+    background-color: var(--line-color);
+}
+
+.end-of-piece-next {
+    width: 100%;
+    height: 8px;
+    background-color: var(--line-color);
+}
+
+.clef {
+    height: calc(var(--tree-margin) * 4 * 18 / 25);
+    color: var(--line-color); 
+    position: relative;
+}
+
+.clef-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
