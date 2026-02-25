@@ -17,8 +17,8 @@ The second td grows to fill the content. Second td also have a border bottom dot
 
 The fourth element, if it exists, must be a table which will be used as a sublevel.
 
-
 ![Index with dots](./documentation/images/index-component.png "Index component")
+
 
 ### Index component [ES]
 
@@ -35,25 +35,39 @@ El cuarto elemento, si existe, debe ser una tabla (table) dentro de un elemento 
 ![Index with dots](./documentation/images/index-component.png "Index component")
 
 
+## Music themed tree
+
+List that displays items with a "Music Sheet" style
+
+Check it on [Music themed tree](https://juaamol.github.io/html-css-examples/music-themed-tree/music-themed-tree.html "Music themed tree")
+
+![Music themed tree](./documentation/images/music-themed-tree/music-themed-tree.png "Music themed tree")
+
+
+### Music Shelf
+
+List that displays cards with a "Music Book" style
+
+Check it on [Music Shelf](https://juaamol.github.io/html-css-examples/music-shelf/music-shelf.html "Music Shelf")
+
+![Music Shelf](./documentation/images/music-shelf/music-shelf.png "Music Shelf")
+
+
 ## Dual Card  
 
 Check it on [Dual card](https://juaamol.github.io/html-css-examples/dual-card/dual-card.html "Dual card")
-
-Own version of this tutorial: https://www.youtube.com/watch?v=-1U62fdmCk4&t=20s
 
 Card with two diferent colors. Button appears on hover
 
 ![Card two colors](./documentation/images/dual-card/dual-card.png "Card two colors")
 
 
-
 ## Open Close Card
 
 Check it on [Open Close card](https://juaamol.github.io/html-css-examples/open-card/open-card.html "Open Close card")
 
-Own version of this tutorial: https://www.youtube.com/watch?v=EZqhWu8GJ6U&t=43s
-
 ![Card open close](./documentation/images/open-card/open-card.png "Card open close")
+
 
 ## Login form
 
@@ -70,12 +84,3 @@ Based on: https://www.youtube.com/watch?v=OWNxUVnY3pg
 Check it on [Circle menu](https://juaamol.github.io/html-css-examples/game-radial-menu/game-radial-menu.html "Circle menu")
 
 ![Circle menu](./documentation/images/game-radial-menu/game-radial-menu.png "Circle menu")
-
-
-## Music themed tree
-
-List that displays a list of items with a "Music Sheet" style
-
-Check it on [Music themed tree](https://juaamol.github.io/html-css-examples/music-themed-tree/music-themed-tree.html "Music themed tree")
-
-![Music themed tree](./documentation/images/music-themed-tree/music-themed-tree.png "Music themed tree")
