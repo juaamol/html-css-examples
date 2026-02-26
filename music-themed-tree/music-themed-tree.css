@@ -55,6 +55,9 @@ html {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.results-container {
   margin-left: calc(calc(var(--tree-margin) - var(--bullet-width)) / 2);
 }
 
@@ -197,15 +200,18 @@ html {
   color: var(--line-color);
 }
 
-.search-input {
+.search-group {
   margin-top: 4px;
   margin-bottom: 12px;
+  z-index: 1;
+}
+
+.search-input {
   padding: 8px 12px;
   border: 1px solid var(--line-color);
   border-radius: 4px;
   font-size: 1rem;
   font-family: "Georgia", sans-serif;
-  z-index: 1;
 }
 
 /* SEARCH INTERACTIONS */
@@ -216,17 +222,28 @@ html {
 
 .search-input.invalid {
   border: 1px solid #c0392b !important;
-  background-color: #FAF2EE; 
+  background-color: #faf2ee;
   outline: none;
 }
 
 .search-input.valid {
   border: 1px solid #27ae60 !important;
-  background-color: #F5FAF8;
+  background-color: #f5faf8;
   outline: none;
 }
 
 .search-input {
   width: calc(100% - 10px);
   box-sizing: border-box;
+}
+
+.results-container {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+
+.results-container:has(.tree-list:not(.hidden)) {
+  height: 150px;
+  transition: height 0.3s ease-in;
 }

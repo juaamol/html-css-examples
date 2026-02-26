@@ -13,14 +13,6 @@ const works = [
   "The Four Seasons",
 ];
 
-function closeAllTrees() {
-  document
-    .querySelectorAll("#composer-results, #work-results")
-    .forEach((list) => {
-      list.classList.add("hidden");
-    });
-}
-
 /**
  * 2. Main function to initialize search behavior
  * @param {string} inputId - ID of the text input
@@ -33,9 +25,6 @@ function initMusicSearch(inputId, resultsId, dataSet) {
 
   input.addEventListener("input", () => {
     const query = input.value.toLowerCase().trim();
-
-    closeAllTrees();
-
     resultsList.innerHTML = "";
     input.classList.remove("valid", "invalid");
 
@@ -61,7 +50,6 @@ function initMusicSearch(inputId, resultsId, dataSet) {
             e.stopPropagation();
             input.value = match;
             input.classList.add("valid");
-            closeAllTrees();
           });
 
           resultsList.appendChild(li);
@@ -72,20 +60,13 @@ function initMusicSearch(inputId, resultsId, dataSet) {
 
   input.addEventListener("focus", () => {
     const query = input.value.toLowerCase().trim();
-
-    closeAllTrees();
-
-    if (query !== "" && resultsList.innerHTML !== "") {
-      resultsList.classList.remove("hidden");
-    }
+    resultsList.classList.remove("hidden");
   });
 
-  document.addEventListener("click", (event) => {
-    const isClickInside =
-      input.contains(event.target) || resultsList.contains(event.target);
+  input.addEventListener("blur", () => {
+    resultsList.classList.add("hidden");
 
-    if (!isClickInside) {
-      if (input.value.trim() !== "") {
+    if (input.value.trim() !== "") {
         const exactMatch = dataSet.find(
           (item) => item.toLowerCase() === input.value.toLowerCase(),
         );
@@ -98,9 +79,6 @@ function initMusicSearch(inputId, resultsId, dataSet) {
           input.classList.remove("valid");
         }
       }
-
-      resultsList.classList.add("hidden");
-    }
   });
 }
 
