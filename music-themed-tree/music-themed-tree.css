@@ -11,24 +11,37 @@
   --pentagram-line-margin: calc(
     calc(var(--tree-margin) - var(--pentagram-line-width)) / 2
   );
-  /*--optional-tree-height: 350px;*/
+  --optional-tree-height: 200px;
+}
+
+html {
+    background-color: #FFFFE0;
 }
 
 .tree-container {
   background-color: var(--paper);
   background-image: url("./assets/natural-paper.png");
   padding: 30px;
-  max-width: 450px;
   border-radius: 2px;
+  margin: auto;
+  margin-top: 32px;
+  width: fit-content;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   font-family: "Georgia", serif;
   border-left: 6px solid var(--henle-blue);
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
+@media (min-width: 600px) {
+  .tree-container {
+    flex-wrap: unset;
+  }
+}
+
 .tree {
-  height: var(--optional-tree-height);
+  min-height: var(--optional-tree-height);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -167,11 +180,15 @@
 }
 
 .clef.c-clef {
-    height: calc(var(--tree-margin) * 4 * 18 / 25);
+  height: calc(var(--tree-margin) * 4 * 18 / 25);
 }
 
 .clef.g-clef {
   height: calc(var(--tree-margin) * 4 * 15.186 / 40.768);
+}
+
+.clef.f-clef {
+  height: calc(var(--tree-margin) * 4 * 18 / 20);
 }
 
 .clef-svg {
