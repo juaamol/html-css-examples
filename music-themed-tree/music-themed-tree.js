@@ -5,7 +5,6 @@ const composers = [
   "Frédéric Chopin",
   "Antonio Vivaldi",
 ];
-
 const works = [
   "Mass in B Minor",
   "Symphony No. 5",
@@ -13,6 +12,14 @@ const works = [
   "Nocturne Op. 9 No. 2",
   "The Four Seasons",
 ];
+
+function closeAllTrees() {
+  document
+    .querySelectorAll("#composer-results, #work-results")
+    .forEach((list) => {
+      list.classList.add("hidden");
+    });
+}
 
 /**
  * 2. Main function to initialize search behavior
@@ -26,8 +33,10 @@ function initMusicSearch(inputId, resultsId, dataSet) {
 
   input.addEventListener("input", () => {
     const query = input.value.toLowerCase().trim();
-    resultsList.innerHTML = "";
 
+    closeAllTrees();
+
+    resultsList.innerHTML = "";
     input.classList.remove("valid", "invalid");
 
     if (query.length > 0) {
@@ -41,7 +50,6 @@ function initMusicSearch(inputId, resultsId, dataSet) {
         matches.forEach((match) => {
           const li = document.createElement("li");
           li.className = "tree-node";
-
           li.innerHTML = `
                         <div class="node-row">
                             <span class="note-icon"><span>𝅝</span></span>
@@ -53,16 +61,22 @@ function initMusicSearch(inputId, resultsId, dataSet) {
             e.stopPropagation();
             input.value = match;
             input.classList.add("valid");
-            resultsList.classList.add("hidden");
+            closeAllTrees();
           });
 
           resultsList.appendChild(li);
         });
-      } else {
-        resultsList.classList.add("hidden");
       }
-    } else {
-      resultsList.classList.add("hidden");
+    }
+  });
+
+  input.addEventListener("focus", () => {
+    const query = input.value.toLowerCase().trim();
+
+    closeAllTrees();
+
+    if (query !== "" && resultsList.innerHTML !== "") {
+      resultsList.classList.remove("hidden");
     }
   });
 
@@ -71,8 +85,6 @@ function initMusicSearch(inputId, resultsId, dataSet) {
       input.contains(event.target) || resultsList.contains(event.target);
 
     if (!isClickInside) {
-      resultsList.classList.add("hidden");
-
       if (input.value.trim() !== "") {
         const exactMatch = dataSet.find(
           (item) => item.toLowerCase() === input.value.toLowerCase(),
@@ -85,15 +97,9 @@ function initMusicSearch(inputId, resultsId, dataSet) {
           input.classList.add("invalid");
           input.classList.remove("valid");
         }
-      } else {
-        input.classList.remove("valid", "invalid");
       }
-    }
-  });
 
-  input.addEventListener("focus", () => {
-    if (input.value.trim() !== "" && resultsList.innerHTML !== "") {
-      resultsList.classList.remove("hidden");
+      resultsList.classList.add("hidden");
     }
   });
 }
