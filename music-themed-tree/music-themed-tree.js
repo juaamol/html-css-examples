@@ -22,6 +22,7 @@ const works = [
 function initMusicSearch(inputId, resultsId, dataSet) {
   const input = document.getElementById(inputId);
   const resultsList = document.getElementById(resultsId);
+  const group = input.closest(".search-group");
 
   input.addEventListener("input", () => {
     const query = input.value.toLowerCase().trim();
@@ -39,17 +40,19 @@ function initMusicSearch(inputId, resultsId, dataSet) {
         matches.forEach((match) => {
           const li = document.createElement("li");
           li.className = "tree-node";
+          li.setAttribute("tabindex", "-1");
           li.innerHTML = `
-                        <div class="node-row">
-                            <span class="note-icon"><span>𝅝</span></span>
-                            <span class="node-text">${match}</span>
-                        </div>
-                    `;
+                <div class="node-row">
+                    <span class="note-icon"><span>𝅝</span></span>
+                    <span class="node-text">${match}</span>
+                </div>
+            `;
 
           li.addEventListener("click", (e) => {
-            e.stopPropagation();
             input.value = match;
             input.classList.add("valid");
+            input.classList.remove("invalid");
+            resultsList.classList.add("hidden");
           });
 
           resultsList.appendChild(li);
@@ -60,25 +63,29 @@ function initMusicSearch(inputId, resultsId, dataSet) {
 
   input.addEventListener("focus", () => {
     const query = input.value.toLowerCase().trim();
-    resultsList.classList.remove("hidden");
+      resultsList.classList.remove("hidden");
   });
 
-  input.addEventListener("blur", () => {
+  group.addEventListener("focusout", (event) => {
+    if (group.contains(event.relatedTarget)) {
+      return;
+    }
+
     resultsList.classList.add("hidden");
 
     if (input.value.trim() !== "") {
-        const exactMatch = dataSet.find(
-          (item) => item.toLowerCase() === input.value.toLowerCase(),
-        );
-        if (exactMatch) {
-          input.value = exactMatch;
-          input.classList.add("valid");
-          input.classList.remove("invalid");
-        } else {
-          input.classList.add("invalid");
-          input.classList.remove("valid");
-        }
+      const exactMatch = dataSet.find(
+        (item) => item.toLowerCase() === input.value.toLowerCase(),
+      );
+      if (exactMatch) {
+        input.value = exactMatch;
+        input.classList.add("valid");
+        input.classList.remove("invalid");
+      } else {
+        input.classList.add("invalid");
+        input.classList.remove("valid");
       }
+    }
   });
 }
 
