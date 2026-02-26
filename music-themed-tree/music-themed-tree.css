@@ -15,7 +15,7 @@
 }
 
 html {
-    background-color: #FFFFE0;
+  background-color: #ffffe0;
 }
 
 .tree-container {
@@ -206,4 +206,27 @@ html {
   font-size: 1rem;
   font-family: "Georgia", sans-serif;
   z-index: 1;
+}
+
+/* SEARCH INTERACTIONS */
+
+.tree-list.hidden {
+  display: none;
+}
+
+.search-input.invalid {
+  border: 1px solid #c0392b !important;
+  background-color: #FAF2EE; 
+  outline: none;
+}
+
+.search-input.valid {
+  border: 1px solid #27ae60 !important;
+  background-color: #F5FAF8;
+  outline: none;
+}
+
+.search-input {
+  width: calc(100% - 10px);
+  box-sizing: border-box;
 }
