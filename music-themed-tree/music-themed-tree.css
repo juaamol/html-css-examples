@@ -23,6 +23,8 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   font-family: "Georgia", serif;
   border-left: 6px solid var(--henle-blue);
+  display: flex;
+  gap: 2rem;
 }
 
 .tree {
@@ -129,6 +131,7 @@
   display: flex;
   margin: 0;
   height: 100%;
+  opacity: 0.5;
 }
 
 .pentagram > li {
@@ -151,9 +154,6 @@
 
 .double-bar-line > * {
   background-color: var(--line-color);
-}
-
-.double-bar-line > *:nth-child(1) {
   height: 4px;
 }
 
@@ -162,9 +162,16 @@
 }
 
 .clef {
-  height: calc(var(--tree-margin) * 4 * 18 / 25);
   margin-left: var(--pentagram-line-margin);
   width: calc(calc(var(--tree-margin) * 4) + var(--pentagram-line-width));
+}
+
+.clef.c-clef {
+    height: calc(var(--tree-margin) * 4 * 18 / 25);
+}
+
+.clef.g-clef {
+  height: calc(var(--tree-margin) * 4 * 15.186 / 40.768);
 }
 
 .clef-svg {
@@ -177,7 +184,6 @@
   margin-top: 4px;
   margin-bottom: 12px;
   padding: 8px 12px;
-  width: 100%;
   border: 1px solid var(--line-color);
   border-radius: 4px;
   font-size: 1rem;
