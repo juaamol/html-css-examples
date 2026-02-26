@@ -215,11 +215,6 @@ html {
 }
 
 /* SEARCH INTERACTIONS */
-
-.tree-list.hidden {
-  display: none;
-}
-
 .search-input.invalid {
   border: 1px solid #c0392b !important;
   background-color: #faf2ee;
@@ -240,10 +235,15 @@ html {
 .results-container {
   height: 0;
   overflow: hidden;
-  transition: height 0.3s ease-out;
+  transition: height 0.3s ease;
 }
 
-.results-container:has(.tree-list:not(.hidden)) {
-  height: 150px;
-  transition: height 0.3s ease-in;
+.results-container.expanded {
+  height: 100px;
+  transition: height 0.3s ease;
+}
+
+.results-container.big {
+    height: 250px;
+    transition: height 0.3s ease;
 }

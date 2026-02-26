@@ -117,7 +117,7 @@
           autocomplete="off"
         />
         <div class="results-container">
-          <ul id="composer-results" class="tree-list hidden"></ul>
+          <ul id="composer-results" class="tree-list"></ul>
         </div>
       </div>
 
@@ -130,7 +130,7 @@
           autocomplete="off"
         />
         <div class="results-container">
-          <ul id="work-results" class="tree-list hidden"></ul>
+          <ul id="work-results" class="tree-list"></ul>
         </div>
       </div>
 
@@ -141,57 +141,59 @@
           placeholder="Instrumentation used"
           class="search-input"
         />
-        <ul class="tree-list">
-          <li class="tree-node">
-            <div class="node-row">
-              <span class="note-icon"><span>𝅝</span></span>
-              <span class="node-text">Any Instrument</span>
-            </div>
-            <ul class="tree-list">
-              <li class="tree-node">
-                <div class="node-row">
-                  <span class="note-icon"><span>𝅝</span></span>
-                  <span class="node-text">Strings</span>
-                </div>
-                <ul class="tree-list">
-                  <li class="tree-node">
-                    <div class="node-row">
-                      <span class="note-icon"><span>𝅝</span></span>
-                      <span class="node-text matched">Violin</span>
-                      <span class="note-accent"><span>&#119186;</span></span>
-                    </div>
-                    <ul class="tree-list">
-                      <li class="tree-node">
-                        <div class="node-row">
-                          <span class="note-icon"><span>𝅝</span></span
-                          ><span class="node-text">Baroque Violin</span>
-                        </div>
-                      </li>
-                      <li class="tree-node">
-                        <div class="node-row">
-                          <span class="note-icon"><span>𝅝</span></span
-                          ><span class="node-text">Electric Violin</span>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="tree-node">
-                    <div class="node-row">
-                      <span class="note-icon"><span>𝅝</span></span
-                      ><span class="node-text">Cello</span>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="tree-node">
-                <div class="node-row">
-                  <span class="note-icon"><span>𝅝</span></span
-                  ><span class="node-text">Keyboard</span>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <div class="results-container big expanded">
+          <ul class="tree-list">
+            <li class="tree-node">
+              <div class="node-row">
+                <span class="note-icon"><span>𝅝</span></span>
+                <span class="node-text">Any Instrument</span>
+              </div>
+              <ul class="tree-list">
+                <li class="tree-node">
+                  <div class="node-row">
+                    <span class="note-icon"><span>𝅝</span></span>
+                    <span class="node-text">Strings</span>
+                  </div>
+                  <ul class="tree-list">
+                    <li class="tree-node">
+                      <div class="node-row">
+                        <span class="note-icon"><span>𝅝</span></span>
+                        <span class="node-text matched">Violin</span>
+                        <span class="note-accent"><span>&#119186;</span></span>
+                      </div>
+                      <ul class="tree-list">
+                        <li class="tree-node">
+                          <div class="node-row">
+                            <span class="note-icon"><span>𝅝</span></span
+                            ><span class="node-text">Baroque Violin</span>
+                          </div>
+                        </li>
+                        <li class="tree-node">
+                          <div class="node-row">
+                            <span class="note-icon"><span>𝅝</span></span
+                            ><span class="node-text">Electric Violin</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="tree-node">
+                      <div class="node-row">
+                        <span class="note-icon"><span>𝅝</span></span
+                        ><span class="node-text">Cello</span>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="tree-node">
+                  <div class="node-row">
+                    <span class="note-icon"><span>𝅝</span></span
+                    ><span class="node-text">Keyboard</span>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="double-bar-line">

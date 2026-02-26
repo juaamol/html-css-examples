@@ -22,6 +22,7 @@ const works = [
 function initMusicSearch(inputId, resultsId, dataSet) {
   const input = document.getElementById(inputId);
   const resultsList = document.getElementById(resultsId);
+  const resultsContainer = resultsList.closest('.results-container');
   const group = input.closest(".search-group");
 
   input.addEventListener("input", () => {
@@ -35,7 +36,7 @@ function initMusicSearch(inputId, resultsId, dataSet) {
       );
 
       if (matches.length > 0) {
-        resultsList.classList.remove("hidden");
+        resultsContainer.classList.add("expanded");
 
         matches.forEach((match) => {
           const li = document.createElement("li");
@@ -50,9 +51,16 @@ function initMusicSearch(inputId, resultsId, dataSet) {
 
           li.addEventListener("click", (e) => {
             input.value = match;
+            
+            const accent = document.createElement('span')
+            resultsList.querySelectorAll('.note-accent').forEach(item => item.remove());
+            accent.classList.add('note-accent');
+            accent.innerHTML = `<span>&#119186;</span>`;
+            li.querySelector('.node-row').appendChild(accent)
+            
             input.classList.add("valid");
             input.classList.remove("invalid");
-            resultsList.classList.add("hidden");
+            resultsContainer.classList.remove("expanded");
           });
 
           resultsList.appendChild(li);
@@ -63,7 +71,7 @@ function initMusicSearch(inputId, resultsId, dataSet) {
 
   input.addEventListener("focus", () => {
     const query = input.value.toLowerCase().trim();
-      resultsList.classList.remove("hidden");
+      resultsContainer.classList.add("expanded");
   });
 
   group.addEventListener("focusout", (event) => {
@@ -71,7 +79,7 @@ function initMusicSearch(inputId, resultsId, dataSet) {
       return;
     }
 
-    resultsList.classList.add("hidden");
+    resultsContainer.classList.remove("expanded");
 
     if (input.value.trim() !== "") {
       const exactMatch = dataSet.find(
