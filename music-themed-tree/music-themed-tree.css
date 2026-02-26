@@ -9,7 +9,7 @@
     --tree-margin: 24px;
     --pentagram-line-width: 2px;
     --pentagram-line-margin: calc(calc(var(--tree-margin) - var(--pentagram-line-width)) / 2);
-    --optional-tree-height: 350px;
+    /*--optional-tree-height: 350px;*/
 }
 
 .tree-container {
@@ -39,7 +39,6 @@
     padding: 0;
     margin: 0;
 }
-
 
 .tree-list .tree-list {
     margin-left: var(--tree-margin);
@@ -169,4 +168,17 @@
     width: 100%;
     height: 100%;
     color: var(--line-color);
+}
+
+
+.search-input {
+    margin-top: 4px;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    width: 100%;
+    border: 1px solid var(--line-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: "Georgia", sans-serif;
+    z-index: 1;
 }
