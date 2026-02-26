@@ -5,7 +5,8 @@
   --text-dark: #1a1a1a;
   --text-gray: #636e72;
   --line-color: #4d4d4d;
-  --tree-margin: 24px;
+  --tree-margin: 32px;
+  --bullet-width: 24px;
   --pentagram-line-width: 2px;
   --pentagram-line-margin: calc(
     calc(var(--tree-margin) - var(--pentagram-line-width)) / 2
@@ -39,6 +40,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-left: calc(calc(var(--tree-margin) - var(--bullet-width)) / 2);
 }
 
 .tree-list .tree-list {
@@ -59,7 +61,7 @@
 }
 
 .note-icon {
-  width: 24px;
+  width: var(--bullet-width);
   height: 20px;
   display: flex;
   color: var(--text-dark);
@@ -70,8 +72,8 @@
 }
 
 .note-icon > span {
-  font-size: 2.5rem;
-  padding-bottom: 1.4rem;
+  font-size: 3.2rem;
+  padding-bottom: 2rem;
 }
 
 .note-accent {
