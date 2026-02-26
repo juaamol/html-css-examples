@@ -5,13 +5,13 @@
   --text-dark: #1a1a1a;
   --text-gray: #636e72;
   --line-color: #4d4d4d;
-  --tree-margin: 32px;
-  --bullet-width: 24px;
+
+  --pentagram-spacing: 30px;
   --pentagram-line-width: 2px;
-  --pentagram-line-margin: calc(
-    calc(var(--tree-margin) - var(--pentagram-line-width)) / 2
-  );
   --optional-tree-height: 200px;
+
+  --tree-margin: calc(var(--pentagram-spacing) + var(--pentagram-line-width));
+  --bullet-width: 24px;
 }
 
 html {
@@ -143,7 +143,7 @@ html {
   position: absolute;
   list-style: none;
   padding-left: 0;
-  left: var(--pentagram-line-margin);
+  left: calc(var(--pentagram-spacing) / 2);
   display: flex;
   margin: 0;
   height: 100%;
@@ -151,7 +151,7 @@ html {
 }
 
 .pentagram > li {
-  width: calc(var(--tree-margin) - var(--pentagram-line-width));
+  width: var(--pentagram-spacing);
 }
 
 .pentagram > li:nth-child(odd) {
@@ -160,7 +160,7 @@ html {
 }
 
 .double-bar-line {
-  margin-left: var(--pentagram-line-margin);
+  margin: 0 calc(var(--pentagram-spacing) / 2);
   width: calc(calc(var(--tree-margin) * 4) + var(--pentagram-line-width));
   margin-top: 4px;
   display: flex;
@@ -178,7 +178,7 @@ html {
 }
 
 .clef {
-  margin-left: var(--pentagram-line-margin);
+  margin: 0 calc(var(--pentagram-spacing) / 2);
   width: calc(calc(var(--tree-margin) * 4) + var(--pentagram-line-width));
 }
 
@@ -201,8 +201,7 @@ html {
 }
 
 .search-group {
-  margin-top: 4px;
-  margin-bottom: 12px;
+  margin-top: 16px;
   z-index: 1;
 }
 
@@ -228,7 +227,7 @@ html {
 }
 
 .search-input {
-  width: calc(100% - 10px);
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -244,6 +243,6 @@ html {
 }
 
 .results-container.big {
-    height: 250px;
-    transition: height 0.3s ease;
+  height: 250px;
+  transition: height 0.3s ease;
 }
